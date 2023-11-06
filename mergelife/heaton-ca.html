@@ -3,19 +3,25 @@
 <head>
   <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
   
-  <title>AIFH Volume 3, Chapter 3: Boltzmann Machine TSP Weight Grid | Heaton Research</title>
+  <title>HeatonCA - Jeff Heaton&#39;s Cellular Automata | Heaton Research</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Generate TSP Boltzmann Machine Weight Matrix Number of cities:    The columns represent source city, by cities (2nd row) inside of the tour position (1st row).  The rows represent [neuron index]([tou">
+  <meta name="description" content="HeatonCA is an application that allows you to experiment with the cellular automata described in the paper Evolving continuous cellular automata for aesthetic objectives. The algorithm defines these c">
 <meta property="og:type" content="website">
-<meta property="og:title" content="AIFH Volume 3, Chapter 3: Boltzmann Machine TSP Weight Grid">
-<meta property="og:url" content="https://www.heatonresearch.com/aifh/vol3/boltzmann_tsp_grid.html">
+<meta property="og:title" content="HeatonCA - Jeff Heaton&#39;s Cellular Automata">
+<meta property="og:url" content="https://www.heatonresearch.com/mergelife/heaton-ca.html">
 <meta property="og:site_name" content="Heaton Research">
-<meta property="og:description" content="Generate TSP Boltzmann Machine Weight Matrix Number of cities:    The columns represent source city, by cities (2nd row) inside of the tour position (1st row).  The rows represent [neuron index]([tou">
+<meta property="og:description" content="HeatonCA is an application that allows you to experiment with the cellular automata described in the paper Evolving continuous cellular automata for aesthetic objectives. The algorithm defines these c">
 <meta property="og:locale">
-<meta property="article:published_time" content="2023-10-19T19:26:10.272Z">
-<meta property="article:modified_time" content="2023-10-19T19:26:10.272Z">
+<meta property="og:image" content="https://data.heatonresearch.com/images/mergelife/heatonca/heaton-ca-title.png">
+<meta property="og:image" content="https://data.heatonresearch.com/images/mergelife/heatonca/heaton-ca-gallery.jpg">
+<meta property="og:image" content="https://data.heatonresearch.com/images/mergelife/heatonca/heaton-ca-simulate.jpg">
+<meta property="og:image" content="https://data.heatonresearch.com/images/mergelife/heatonca/heaton-ca-rule.jpg">
+<meta property="og:image" content="https://data.heatonresearch.com/images/mergelife/heatonca/heaton-ca-evolve.jpg">
+<meta property="article:published_time" content="2023-11-06T04:36:56.379Z">
+<meta property="article:modified_time" content="2023-11-06T04:36:56.379Z">
 <meta property="article:author" content="Jeff Heaton">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://data.heatonresearch.com/images/mergelife/heatonca/heaton-ca-title.png">
 <meta name="twitter:creator" content="@jeffheaton">
   
     <link rel="alternate" href="/atom.xml" title="Heaton Research" type="application/atom+xml">
@@ -111,27 +117,41 @@ ga('send', 'pageview');
 </nav>
 
   <div class="container">
-    <a href="/aifh/"><img src="/images/aifh/web_header.png" class="img-responsive center-block"></a>
-<h1>AIFH Volume 3, Chapter 3: Boltzmann Machine TSP Weight Grid</h1>
-<article id="aifh-page-" class="article article-type-aifh-page" itemscope itemprop="blogPost">
+    <h1>HeatonCA - Jeff Heaton&#39;s Cellular Automata</h1>
+<div class="row">
+    <div class="col-sm-12 blog-main">
+      <article id="page-" class="article article-type-page" itemscope itemprop="blogPost">
 
 
   <div class="article-inner">
 
     <div class="article-entry" itemprop="articleBody">
       
-        
-<h1>Generate TSP Boltzmann Machine Weight Matrix</h1>
-Number of cities: <input type="text" id="cityCount" value="5"><br>
-<input type="button" id="generateButton" value="Generate">
+        <p>HeatonCA is an application that allows you to experiment with the cellular automata described in the paper <a href="">Evolving continuous cellular automata for aesthetic objectives</a>. The algorithm defines these cellular automata by rules, represented by a hexadecimal encoding, such
+as E542-5F79-9341-F31E-6C6B-7F08-8773-7068, representing an update rule. The three patterns that you see above are three different MergeLife update rules. Other than a random starting grid, these update rules are entirely deterministic. </p>
 
-<p>The columns represent source city, by cities (2nd row) inside of the tour position (1st row).  The rows represent [neuron index]([tour position],[city #]).  Gamma is a learning-rate like value provided to the algorithm.  The function d(x,y) returns the distance between city x and city y.  The diagonal is set to zero, and is indicated by a slash (\).
+<p>The HeatonCA application discovers these rules using a Genetic Algorithm. You can think of MergeLife as a utility to create an entirely new Cellular Automata similar to Conway's Game of Life. </p>
 
-<h2>Weights</h2>
-<div id="weightOutput"></div>
+<p>When you first start HeatonCA the title page is displayed.</p>
 
-<h2>Biases</h2>
-<p>Biases are always -g/2.</p>
+<img src="https://data.heatonresearch.com/images/mergelife/heatonca/heaton-ca-title.png" width="1024" alt="HeatonCA Gallary"/>
+<br>
+<p>If you select the Gallary option, you will see many rules the genetic algorithm has already discovered. If you choose a rule you can watch it run in the simulator tab.</p>
+<img src="https://data.heatonresearch.com/images/mergelife/heatonca/heaton-ca-gallery.jpg" width="1024" alt="HeatonCA Title Screen"/>
+<br/>
+<p>The rule simulator lets you view the rule as it updates the grid. Options are available to pause and step through each update. If you click the "rule" button, you can see the details of how the rule as decoded.</p>
+<img src="https://data.heatonresearch.com/images/mergelife/heatonca/heaton-ca-simulate.jpg" width="1024" alt="HeatonCA Title Screen"/>
+<br/>
+<p>Refer to the academic paper for the meanings behind the settings that drive each of the rules. What you see on this page is entirely represented in the hexadecimal string that makes up the rule.</p>
+<img src="https://data.heatonresearch.com/images/mergelife/heatonca/heaton-ca-rule.jpg" width="1024" alt="HeatonCA Title Screen"/>
+<br/>
+<p>The evolve option allows you to evolve new rules. It might take several hours to find new rules. The program will prompt you for an output directory to write the rules to. The output from this program are individual PNG files that offer a preview of each rule found. The filenames of the PNG files are the actual rules.</p>
+<img src="https://data.heatonresearch.com/images/mergelife/heatonca/heaton-ca-evolve.jpg" width="1024" alt="HeatonCA Title Screen"/>
+
+
+Citation information for MergeLife:<br><br>
+
+Heaton, J. March (2018). Evolving continuous cellular automata for aesthetic objectives. <i>Genetic Programming Evolvable Machines</i>. <a target="_blank" rel="noopener" href="https://doi.org/10.1007/s10710-018-9336-1">https://doi.org/10.1007/s10710-018-9336-1</a>
 
       
     </div>
@@ -142,7 +162,7 @@ Number of cities: <input type="text" id="cityCount" value="5"><br>
     
 
     <footer class="article-footer">
-      <a data-url="https://www.heatonresearch.com/aifh/vol3/boltzmann_tsp_grid.html" data-id="clombjiuo005off08f6j47ct6" class="article-share-link">
+      <a data-url="https://www.heatonresearch.com/mergelife/heaton-ca.html" data-id="clombyu8u0000gr08d3cxfwae" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       
@@ -155,6 +175,8 @@ Number of cities: <input type="text" id="cityCount" value="5"><br>
   
 </article>
 
+    </div>
+</div>
 
   </div>
   <footer class="blog-footer">
@@ -177,7 +199,7 @@ Jeff Heaton is a computer scientist, data scientist, and indie publisher. Heaton
 <script>
   var disqus_shortname = 'heatonresearch';
   
-  var disqus_url = 'https://www.heatonresearch.com/aifh/vol3/boltzmann_tsp_grid.html';
+  var disqus_url = 'https://www.heatonresearch.com/mergelife/heaton-ca.html';
   
   (function(){
     var dsq = document.createElement('script');
@@ -195,17 +217,6 @@ Jeff Heaton is a computer scientist, data scientist, and indie publisher. Heaton
 
 
 
-
-  
-    
-  
-  
-    
-      
-<script src="/aifh/vol3/boltzmann_tsp_grid.js"></script>
-
-    
-  
 
 
 
